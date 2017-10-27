@@ -25,6 +25,11 @@ import { HeroService } from './hero.service';
     FormsModule,
     RouterModule.forRoot([
       {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      },
+      {
         path: 'heroes',
         component: HeroesComponent
       },
@@ -33,9 +38,8 @@ import { HeroService } from './hero.service';
         component: DashboardComponent
       },
       {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
+        path: 'detail/:id',
+        component: HeroDetailComponent
       }
     ])
   ],
